@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sistema de Aulas — Login</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-login">
+  <main class="center-card">
+    <section class="card glass login-card animate-in">
+      <div class="brand">
+        <h1 class="brand-title">Sistema de Aulas</h1>
+        <p class="brand-sub">Mapa arquitectónico — Reserva y reportes</p>
+      </div>
+
+      <form id="loginForm" class="form-col">
+        <h2 class="form-title">Iniciar sesión</h2>
+        <label class="input-label"><span>Usuario</span>
+          <input id="loginUser" type="text" placeholder="admin / profesor / tecnico" required />
+        </label>
+        <label class="input-label"><span>Contraseña</span>
+          <input id="loginPass" type="password" placeholder="contraseña" required />
+        </label>
+        <label class="input-label"><span>Rol</span>
+          <select id="loginRole">
+            <option value="profesor">Profesor</option>
+            <option value="tecnico">Técnico</option>
+            <option value="admin">Administrador</option>
+          </select>
+        </label>
+
+        <button type="submit" class="btn btn-primary btn-block glow">Acceder</button>
+
+        <p class="muted" style="text-align:center; margin-top:10px;">
+          Demo: <strong>admin/admin123</strong> • <strong>profesor/prof123</strong> • <strong>tecnico/tech123</strong>
+        </p>
+      </form>
+    </section>
+
+    <footer class="footer-note">Entrega — Interfaz profesional futurista</footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
