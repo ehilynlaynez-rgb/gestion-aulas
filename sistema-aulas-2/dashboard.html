@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mapa — Sistema de Aulas</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-app">
+  <header class="topbar glass">
+    <div>
+      <h1 class="title">Sistema de Aulas</h1>
+      <p class="muted small" id="userBadge"></p>
+    </div>
+    <div class="top-actions">
+      <button id="btnReservas" class="btn btn-outline">Reservas</button>
+      <button id="btnLogout" class="btn btn-ghost">Cerrar sesión</button>
+    </div>
+  </header>
+
+  <main class="main-shell">
+    <section class="panel card animate-in">
+      <h2 class="section-title">Mapa arquitectónico — Módulos y aulas</h2>
+      <p class="muted">Haz clic en un aula para ver detalles, reservar o reportar daños.</p>
+
+      <div class="map-wrap glass-panel">
+        <svg id="campusMap" viewBox="0 0 1200 900" xmlns="http://www.w3.org/2000/svg" class="map-svg" role="img" aria-label="Mapa de aulas">
+          <rect x="0" y="0" width="1200" height="900" rx="18" fill="url(#bggrad)"/>
+          <defs>
+            <linearGradient id="bggrad" x1="0" x2="1">
+              <stop offset="0%" stop-color="#e6fbff" stop-opacity="0.06"/>
+              <stop offset="100%" stop-color="#cfefff" stop-opacity="0.02"/>
+            </linearGradient>
+            <filter id="neon" x="-50%" y="-50%" width="200%" height="200%">
+              <feDropShadow dx="0" dy="8" stdDeviation="20" flood-color="#5ee3ff" flood-opacity="0.08"/>
+            </filter>
+          </defs>
+          <g transform="translate(40,40)">
+            <!-- Module 1 -->
+            <g class="module" id="module-1" transform="translate(0,0)">
+              <text class="module-title" x="0" y="-8">Módulo 1</text>
+              <g id="aula-1" class="aula" transform="translate(0,0)">
+                <rect class="aula-rect" x="0" y="0" rx="8" width="140" height="90" />
+                <text class="aula-num" x="8" y="22">Aula 1</text>
+                <text class="aula-emoji" x="8" y="56">💻</text>
+              </g>
+              <g id="aula-2" class="aula" transform="translate(160,0)">
+                <rect class="aula-rect" x="0" y="0" rx="8" width="140" height="90" />
+                <text class="aula-num" x="8" y="22">Aula 2</text>
+                <text class="aula-emoji" x="8" y="56">💻</text>
+              </g>
+              <g id="aula-3" class="aula" transform="translate(0,120)">
+                <rect class="aula-rect" x="0" y="0" rx="8" width="140" height="90" />
+                <text class="aula-num" x="8" y="22">Aula 3</text>
+                <text class="aula-emoji" x="8" y="56">💻</text>
+              </g>
+              <g id="aula-4" class="aula" transform="translate(160,120)">
+                <rect class="aula-rect" x="0" y="0" rx="8" width="140" height="90" />
+                <text class="aula-num" x="8" y="22">Aula 4</text>
+                <text class="aula-emoji" x="8" y="56">💻</text>
+              </g>
+              <g id="aula-5" class="aula" transform="translate(0,240)">
+                <rect class="aula-rect" x="0" y="0" rx="8" width="140" height="90" />
+                <text class="aula-num" x="8" y="22">Aula 5</text>
+                <text class="aula-emoji" x="8" y="56">💻</text>
+              </g>
+              <g id="aula-6" class="aula" transform="translate(160,240)">
+                <rect class="aula-rect" x="0" y="0" rx="8" width="140" height="90" />
+                <text class="aula-num" x="8" y="22">Aula 6</text>
+                <text class="aula-emoji" x="8" y="56">💻</text>
+              </g>
+            </g>
+
+            <!-- Module 2 -->
+            <g class="module" id="module-2" transform="translate(340,0)">
+              <text class="module-title" x="0" y="-8">Módulo 2</text>
+              <g id="aula-7" class="aula" transform="translate(0,0)">
+                <rect class="aula-rect" x="0" y="0" rx="8" width="140" height="90" />
+                <text class="aula-num" x="8" y="22">Aula 7</text><text class="aula-emoji" x="8" y="56">💻</text>
+              </g>
+              <g id="aula-8" class="aula" transform="translate(160,0)">
+                <rect class="aula-rect" x="0" y="0" rx="8" width="140" height="90" />
+                <text class="aula-num" x="8" y="22">Aula 8</text><text class="aula-emoji" x="8" y="56">💻</text>
+              </g>
+              <g id="aula-9" class="aula" transform="translate(0,120)">
+                <rect class="aula-rect" x="0" y="0" rx="8" width="140" height="90" />
+                <text class="aula-num" x="8" y="22">Aula 9</text><text class="aula-emoji" x="8" y="56">💻</text>
+              </g>
+              <g id="aula-10" class="aula" transform="translate(160,120)">
+                <rect class="aula-rect" x="0" y="0" rx="8" width="140" height="90" />
+                <text class="aula-num" x="8" y="22">Aula 10</text><text class="aula-emoji" x="8" y="56">💻</text>
+              </g>
+              <g id="aula-11" class="aula" transform="translate(0,240)">
+                <rect class="aula-rect" x="0" y="0" rx="8" width="140" height="90" />
+                <text class="aula-num" x="8" y="22">Aula 11</text><text class="aula-emoji" x="8" y="56">💻</text>
+              </g>
+              <g id="aula-12" class="aula" transform="translate(160,240)">
+                <rect class="aula-rect" x="0" y="0" rx="8" width="140" height="90" />
+                <text class="aula-num" x="8" y="22">Aula 12</text><text class="aula-emoji" x="8" y="56">💻</text>
+              </g>
+            </g>
+
+            <!-- Module 3 -->
+            <g class="module" id="module-3" transform="translate(680,0)">
+              <text class="module-title" x="0" y="-8">Módulo 3</text>
+              <g id="aula-13" class="aula" transform="translate(0,0)">
+                <rect class="aula-rect" x="0" y="0" rx="8" width="140" height="90" />
+                <text class="aula-num" x="8" y="22">Aula 13</text><text class="aula-emoji" x="8" y="56">💻</text>
+              </g>
+              <g id="aula-14" class="aula" transform="translate(160,0)">
+                <rect class="aula-rect" x="0" y="0" rx="8" width="140" height="90" />
+                <text class="aula-num" x="8" y="22">Aula 14</text><text class="aula-emoji" x="8" y="56">💻</text>
+              </g>
+              <g id="aula-15" class="aula" transform="translate(0,120)">
+                <rect class="aula-rect" x="0" y="0" rx="8" width="140" height="90" />
+                <text class="aula-num" x="8" y="22">Aula 15</text><text class="aula-emoji" x="8" y="56">💻</text>
+              </g>
+              <g id="aula-16" class="aula" transform="translate(160,120)">
+                <rect class="aula-rect" x="0" y="0" rx="8" width="140" height="90" />
+                <text class="aula-num" x="8" y="22">Aula 16</text><text class="aula-emoji" x="8" y="56">💻</text>
+              </g>
+              <g id="aula-17" class="aula" transform="translate(0,240)">
+                <rect class="aula-rect" x="0" y="0" rx="8" width="140" height="90" />
+                <text class="aula-num" x="8" y="22">Aula 17</text><text class="aula-emoji" x="8" y="56">💻</text>
+              </g>
+              <g id="aula-18" class="aula" transform="translate(160,240)">
+                <rect class="aula-rect" x="0" y="0" rx="8" width="140" height="90" />
+                <text class="aula-num" x="8" y="22">Aula 18</text><text class="aula-emoji" x="8" y="56">💻</text>
+              </g>
+            </g>
+
+            <!-- Module 4 -->
+            <g class="module" id="module-4" transform="translate(0,380)">
+              <text class="module-title" x="0" y="-8">Módulo 4</text>
+              <g id="aula-19" class="aula" transform="translate(0,0)">
+                <rect class="aula-rect" x="0" y="0" rx="8" width="140" height="90" />
+                <text class="aula-num" x="8" y="22">Aula 19</text><text class="aula-emoji" x="8" y="56">💻</text>
+              </g>
+              <g id="aula-20" class="aula" transform="translate(160,0)">
+                <rect class="aula-rect" x="0" y="0" rx="8" width="140" height="90" />
+                <text class="aula-num" x="8" y="22">Aula 20</text><text class="aula-emoji" x="8" y="56">💻</text>
+              </g>
+              <g id="aula-21" class="aula" transform="translate(320,0)">
+                <rect class="aula-rect" x="0" y="0" rx="8" width="140" height="90" />
+                <text class="aula-num" x="8" y="22">Aula 21</text><text class="aula-emoji" x="8" y="56">💻</text>
+              </g>
+              <g id="aula-22" class="aula" transform="translate(480,0)">
+                <rect class="aula-rect" x="0" y="0" rx="8" width="140" height="90" />
+                <text class="aula-num" x="8" y="22">Aula 22</text><text class="aula-emoji" x="8" y="56">💻</text>
+              </g>
+              <g id="aula-23" class="aula" transform="translate(640,0)">
+                <rect class="aula-rect" x="0" y="0" rx="8" width="140" height="90" />
+                <text class="aula-num" x="8" y="22">Aula 23</text><text class="aula-emoji" x="8" y="56">💻</text>
+              </g>
+              <g id="aula-24" class="aula" transform="translate(800,0)">
+                <rect class="aula-rect" x="0" y="0" rx="8" width="140" height="90" />
+                <text class="aula-num" x="8" y="22">Aula 24</text><text class="aula-emoji" x="8" y="56">💻</text>
+              </g>
+            </g>
+
+            <!-- Module 5 -->
+            <g class="module" id="module-5" transform="translate(340,380)">
+              <text class="module-title" x="0" y="-8">Módulo 5</text>
+              <g id="aula-25" class="aula" transform="translate(0,0)">
+                <rect class="aula-rect" x="0" y="0" rx="8" width="140" height="90" />
+                <text class="aula-num" x="8" y="22">Aula 25</text><text class="aula-emoji" x="8" y="56">💻</text>
+              </g>
+              <g id="aula-26" class="aula" transform="translate(160,0)">
+                <rect class="aula-rect" x="0" y="0" rx="8" width="140" height="90" />
+                <text class="aula-num" x="8" y="22">Aula 26</text><text class="aula-emoji" x="8" y="56">💻</text>
+              </g>
+              <g id="aula-27" class="aula" transform="translate(320,0)">
+                <rect class="aula-rect" x="0" y="0" rx="8" width="140" height="90" />
+                <text class="aula-num" x="8" y="22">Aula 27</text><text class="aula-emoji" x="8" y="56">💻</text>
+              </g>
+              <g id="aula-28" class="aula" transform="translate(480,0)">
+                <rect class="aula-rect" x="0" y="0" rx="8" width="140" height="90" />
+                <text class="aula-num" x="8" y="22">Aula 28</text><text class="aula-emoji" x="8" y="56">💻</text>
+              </g>
+              <g id="aula-29" class="aula" transform="translate(640,0)">
+                <rect class="aula-rect" x="0" y="0" rx="8" width="140" height="90" />
+                <text class="aula-num" x="8" y="22">Aula 29</text><text class="aula-emoji" x="8" y="56">💻</text>
+              </g>
+              <g id="aula-30" class="aula" transform="translate(800,0)">
+                <rect class="aula-rect" x="0" y="0" rx="8" width="140" height="90" />
+                <text class="aula-num" x="8" y="22">Aula 30</text><text class="aula-emoji" x="8" y="56">💻</text>
+              </g>
+            </g>
+          </g>
+        </svg>
+      </div>
+
+      <div style="margin-top:12px;">
+        <strong>Estado actual:</strong>
+        <span id="liveStatus" class="muted">Actualizando...</span>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

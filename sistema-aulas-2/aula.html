@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Aula — Detalle</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-app">
+  <header class="topbar glass">
+    <div>
+      <h1 id="aulaTitle">Aula</h1>
+      <p class="muted" id="aulaSubtitle"></p>
+    </div>
+    <div>
+      <button id="backBtn" class="btn btn-outline">← Volver al mapa</button>
+      <button id="logoutBtn" class="btn btn-ghost">Cerrar sesión</button>
+    </div>
+  </header>
+
+  <main class="main-shell">
+    <section class="panel card animate-in">
+      <h3 class="section-title">Reservas</h3>
+      <form id="reserveForm" class="form-row">
+        <input id="resName" type="text" placeholder="Nombre del profesor" required />
+        <input id="resStart" type="datetime-local" required />
+        <input id="resEnd" type="datetime-local" required />
+        <button class="btn btn-primary" type="submit">Reservar</button>
+      </form>
+
+      <div style="margin-top:12px;">
+        <h4 class="section-title">Reservas para esta aula</h4>
+        <table id="reservasTable" style="width:100%;border-collapse:collapse">
+          <thead><tr><th>Profesor</th><th>Inicio</th><th>Fin</th><th>Estado</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+
+      <hr style="margin:16px 0;" />
+
+      <h3 class="section-title">Recursos (marca daño para reportar)</h3>
+      <div id="resourcesWrap" class="resources-grid"></div>
+    </section>
+  </main>
+
+  <!-- modal foto -->
+  <div id="photoModal" class="modal hidden">
+    <div class="modal-card glass">
+      <button id="closePhoto" class="modal-close">✕</button>
+      <h3 id="photoTitle">Reportar daño (foto)</h3>
+      <video id="video" autoplay playsinline style="width:100%;border-radius:8px;background:#000;display:none"></video>
+      <canvas id="canvas" style="display:none;"></canvas>
+      <div style="display:flex;gap:8px;margin-top:8px;">
+        <button id="useCam" class="btn btn-primary">Usar cámara</button>
+        <button id="takePic" class="btn btn-primary">Tomar foto</button>
+        <label class="btn btn-outline"><input id="filePicker" type="file" accept="image/*" style="display:none" /> Subir foto</label>
+      </div>
+      <div id="preview" style="margin-top:12px"></div>
+      <div style="margin-top:12px;display:flex;gap:8px">
+        <button id="confirmPhoto" class="btn btn-primary">Guardar</button>
+        <button id="cancelPhoto" class="btn btn-ghost">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
